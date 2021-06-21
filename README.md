@@ -1,8 +1,9 @@
 # inventory2
 
-A new Flutter project.
+A household Inventory management app.
 
-## Getting Started
+## App Functions - 
+
 
 This project is a starting point for a Flutter application.
 
