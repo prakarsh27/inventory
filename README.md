@@ -1,17 +1,11 @@
 # inventory2
 
-A household Inventory management app.
+A household Inventory management app. Simply manage your kitchen inventory by means of QR codes for every item. Scan and add a depleted item to your grocery list for shopping, and scan the same QR again to remove the replenished item from you grocery list.
 
 ## App Functions - 
 
+- Add New Item : Add a new item to your inventory. Also get a QR code specific to that item.
+- Scan QR code : Scan Item QR code, and if the item is present in grocery list, have an option to delte it from there. If the item is not in grocery list, have an option to add it to grocey list.
+- View Grocery List : View the grocery list you have created so far. Each entry has an option to be deleted.
+- View All Items : View all the items in you inventory list. Each entry has an option to re-generate item specific QR, add item to grocey list or to to delete the Item from inventory.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
