@@ -5,7 +5,6 @@ import '../firebase/item.dart';
 import '../screens/qrscreen.dart';
 import '../pair.dart';
 
-
 class AllItemsList extends StatefulWidget {
   Future<Map<String, String>> itemMap;
   String uid;
@@ -29,15 +28,18 @@ class _AllItemsListState extends State<AllItemsList> {
         appBar: AppBar(
           title: Text(
             'All Items'.toUpperCase(),
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/26),
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: MediaQuery.of(context).size.height / 26),
           ),
-          toolbarHeight: MediaQuery.of(context).size.height/9.1,
+          toolbarHeight: MediaQuery.of(context).size.height / 9.1,
           backgroundColor: Colors.indigo[600],
           centerTitle: true,
         ),
         body: SingleChildScrollView(
             child: Container(
-                padding: EdgeInsets.all(MediaQuery.of(context).size.height/91),
+                padding:
+                    EdgeInsets.all(MediaQuery.of(context).size.height / 91),
                 child: FutureBuilder(
                     future: itemMap,
                     builder:
@@ -51,8 +53,9 @@ class _AllItemsListState extends State<AllItemsList> {
                         return Center(
                             child: SizedBox(
                                 child: CircularProgressIndicator(),
-                                width: MediaQuery.of(context).size.height/9,
-                                height: MediaQuery.of(context).size.height/9));
+                                width: MediaQuery.of(context).size.height / 9,
+                                height:
+                                    MediaQuery.of(context).size.height / 9));
                     }))));
   }
 }
@@ -77,7 +80,8 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
   @override
   void initState() {
     for (int i = 0; i < itemList.length; i++) _isExpanded.add(false);
-    itemList.sort((a,b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
+    itemList.sort(
+        (a, b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
     super.initState();
   }
 
@@ -85,7 +89,8 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
   Widget build(BuildContext context) {
     return ExpansionPanelList(
       animationDuration: Duration(milliseconds: 800),
-      expandedHeaderPadding: EdgeInsets.all(MediaQuery.of(context).size.height/182),
+      expandedHeaderPadding:
+          EdgeInsets.all(MediaQuery.of(context).size.height / 182),
       dividerColor: Colors.indigo[600],
       expansionCallback: (index, isExpanded) => setState(() {
         if (isExpanded)
@@ -103,7 +108,8 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
               canTapOnHeader: true,
               headerBuilder: (context, isExpanded) {
                 return Container(
-                    padding: EdgeInsets.only(left: MediaQuery.of(context).size.height/61),
+                    padding: EdgeInsets.only(
+                        left: MediaQuery.of(context).size.height / 61),
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,7 +118,8 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
                             itemList[i].second.toUpperCase(),
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: MediaQuery.of(context).size.height/50.5,
+                                fontSize:
+                                    MediaQuery.of(context).size.height / 50.5,
                                 color: Colors.blue[900]),
                           )
                         ]));
@@ -142,7 +149,9 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
                                       ' will Be Deleted.',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: MediaQuery.of(context).size.height/45.5)),
+                                      fontSize:
+                                          MediaQuery.of(context).size.height /
+                                              45.5)),
                               actions: [
                                 TextButton(
                                     onPressed: () => Navigator.pop(context),
@@ -151,7 +160,10 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
                                       style: TextStyle(
                                           color: Colors.red,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: MediaQuery.of(context).size.height/53.5),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                              53.5),
                                     )),
                                 TextButton(
                                     onPressed: () {
@@ -167,7 +179,10 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
                                       'Ok'.toUpperCase(),
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
-                                          fontSize: MediaQuery.of(context).size.height/53.5),
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                              53.5),
                                     ))
                               ],
                             )),

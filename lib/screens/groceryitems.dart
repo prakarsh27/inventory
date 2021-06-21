@@ -27,14 +27,17 @@ class _GroceryItemsState extends State<GroceryItems> {
         backgroundColor: Colors.blue[100],
         appBar: AppBar(
           title: Text('Grocery Items'.toUpperCase(),
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/26)),
-          toolbarHeight: MediaQuery.of(context).size.height/9.1,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: MediaQuery.of(context).size.height / 26)),
+          toolbarHeight: MediaQuery.of(context).size.height / 9.1,
           centerTitle: true,
           backgroundColor: Colors.indigo[600],
         ),
         body: SingleChildScrollView(
             child: Container(
-                padding: EdgeInsets.all(MediaQuery.of(context).size.height/91),
+                padding:
+                    EdgeInsets.all(MediaQuery.of(context).size.height / 91),
                 child: FutureBuilder(
                     future: itemMap,
                     builder:
@@ -50,8 +53,8 @@ class _GroceryItemsState extends State<GroceryItems> {
                         return Center(
                             child: SizedBox(
                           child: CircularProgressIndicator(),
-                          width: MediaQuery.of(context).size.height/9,
-                          height: MediaQuery.of(context).size.height/9,
+                          width: MediaQuery.of(context).size.height / 9,
+                          height: MediaQuery.of(context).size.height / 9,
                         ));
                     }))));
   }
@@ -78,7 +81,8 @@ class _GroceryListViewState extends State<GroceryListView> {
   @override
   void initState() {
     for (int i = 0; i < itemList.length; i++) delete.add(false);
-    itemList.sort((a,b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
+    itemList.sort(
+        (a, b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
     super.initState();
   }
 
@@ -90,7 +94,9 @@ class _GroceryListViewState extends State<GroceryListView> {
         for (int i = 0; i < itemList.length; i++)
           ListTile(
               title: Text(itemList[i].second.toUpperCase(),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/45.5)),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: MediaQuery.of(context).size.height / 45.5)),
               trailing: (delete[i])
                   ? Wrap(
                       spacing: 10,
@@ -98,7 +104,7 @@ class _GroceryListViewState extends State<GroceryListView> {
                         IconButton(
                           icon: Icon(
                             Icons.close_rounded,
-                            size: MediaQuery.of(context).size.height/26,
+                            size: MediaQuery.of(context).size.height / 26,
                             color: Colors.red,
                           ),
                           onPressed: () {
@@ -109,7 +115,8 @@ class _GroceryListViewState extends State<GroceryListView> {
                         ),
                         IconButton(
                           icon: Icon(Icons.check_rounded,
-                              size: MediaQuery.of(context).size.height/26, color: Colors.green[600]),
+                              size: MediaQuery.of(context).size.height / 26,
+                              color: Colors.green[600]),
                           onPressed: () {
                             ItemDatabase().delete(uid, itemList[i].first,
                                 list: 'groceryItems');
@@ -125,7 +132,8 @@ class _GroceryListViewState extends State<GroceryListView> {
                     )
                   : IconButton(
                       icon: Icon(Icons.delete_outline_rounded,
-                          size: MediaQuery.of(context).size.height/26, color: Colors.indigo[600]),
+                          size: MediaQuery.of(context).size.height / 26,
+                          color: Colors.indigo[600]),
                       onPressed: () {
                         setState(() {
                           delete = List.generate(delete.length, (_) => false,
