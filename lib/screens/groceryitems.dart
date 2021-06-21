@@ -78,6 +78,7 @@ class _GroceryListViewState extends State<GroceryListView> {
   @override
   void initState() {
     for (int i = 0; i < itemList.length; i++) delete.add(false);
+    itemList.sort((a,b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
     super.initState();
   }
 

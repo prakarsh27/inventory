@@ -77,6 +77,7 @@ class _ExpansionPanelWidgetState extends State<ExpansionPanelWidget> {
   @override
   void initState() {
     for (int i = 0; i < itemList.length; i++) _isExpanded.add(false);
+    itemList.sort((a,b) => a.second.toLowerCase().compareTo(b.second.toLowerCase()));
     super.initState();
   }
 
