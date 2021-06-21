@@ -1,4 +1,4 @@
-# inventory2
+# inventory
 
 A household Inventory management app. Simply manage your kitchen inventory by means of QR codes for every item. Scan and add a depleted item to your grocery list for shopping, and scan the same QR again to remove the replenished item from you grocery list.
 
