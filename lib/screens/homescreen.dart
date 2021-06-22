@@ -30,12 +30,16 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () => context.read<AuthenticationService>().signOut(),
             elevation: 5.0,
             label: Text('Sign Out',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/61)),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.height / 61)),
             icon: Icon(Icons.power_settings_new_rounded)),
         appBar: AppBar(
             title: Text('Inventory'.toUpperCase(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/26)),
-            toolbarHeight: MediaQuery.of(context).size.height/9.1,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: MediaQuery.of(context).size.height / 26)),
+            toolbarHeight: MediaQuery.of(context).size.height / 9.1,
             backgroundColor: Colors.indigo[600],
             centerTitle: true),
         body: Container(
@@ -60,15 +64,24 @@ class _HomeScreenState extends State<HomeScreen> {
                           if (snapshot.hasData)
                             welcomeMessage =
                                 welcomeMessage + ' ' + snapshot.data;
-                          return Text(welcomeMessage.toUpperCase(),
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: MediaQuery.of(context).size.height/30.3));
+                          return Container(
+                              width: MediaQuery.of(context).size.width / 1.2,
+                              child: Text(welcomeMessage.toUpperCase(),
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize:
+                                          MediaQuery.of(context).size.height /
+                                              30.3)));
                         }),
                   )),
               Expanded(
                   flex: 3,
                   child: Container(
-                    padding: EdgeInsets.only(bottom: MediaQuery.of(context).size.height/32.5, right: MediaQuery.of(context).size.height/30, left: MediaQuery.of(context).size.height/30),
+                    padding: EdgeInsets.only(
+                        bottom: MediaQuery.of(context).size.height / 32.5,
+                        right: MediaQuery.of(context).size.height / 30,
+                        left: MediaQuery.of(context).size.height / 30),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
@@ -79,7 +92,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   MaterialPageRoute(
                                       builder: (context) => AddScreen(uid))),
                               child: Container(
-                                height: MediaQuery.of(context).size.height/20.2,
+                                height:
+                                    MediaQuery.of(context).size.height / 20.2,
                                 width: MediaQuery.of(context).size.width / 1.2,
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
@@ -96,7 +110,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Add New Item'.toUpperCase(),
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.height/32.5,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                32.5,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -111,7 +127,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   MaterialPageRoute(
                                       builder: (context) => ScanScreen(uid))),
                               child: Container(
-                                height: MediaQuery.of(context).size.height/20.2,
+                                height:
+                                    MediaQuery.of(context).size.height / 20.2,
                                 width: MediaQuery.of(context).size.width / 1.2,
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
@@ -128,7 +145,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'Scan QR Code'.toUpperCase(),
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.height/32.5,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                32.5,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -146,7 +165,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                               uid: uid, list: 'groceryItems'),
                                           uid: uid))),
                               child: Container(
-                                height: MediaQuery.of(context).size.height/20.2,
+                                height:
+                                    MediaQuery.of(context).size.height / 20.2,
                                 width: MediaQuery.of(context).size.width / 1.2,
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
@@ -163,7 +183,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'View Grocery List'.toUpperCase(),
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.height/32.5,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                32.5,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
@@ -180,7 +202,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ItemDatabase().getItemList(uid: uid),
                                           uid))),
                               child: Container(
-                                height: MediaQuery.of(context).size.height/20.2,
+                                height:
+                                    MediaQuery.of(context).size.height / 20.2,
                                 width: MediaQuery.of(context).size.width / 1.2,
                                 decoration: BoxDecoration(
                                     gradient: LinearGradient(
@@ -197,7 +220,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     'View All Items'.toUpperCase(),
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: MediaQuery.of(context).size.height/32.5,
+                                        fontSize:
+                                            MediaQuery.of(context).size.height /
+                                                32.5,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
